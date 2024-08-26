@@ -29,12 +29,19 @@ export interface RegionalBloc {
 }
 
 export interface CountryType {
-  name: string;
+   name: {
+    common: string;
+    nativeName?: Record<string, { common: string }>;
+  };
+  capital?: string[];
+  flags: {
+    png: string;
+    svg: string;
+  };
   topLevelDomain: string[];
   alpha2Code: string;
   alpha3Code: string;
   callingCodes: string[];
-  capital: string;
   altSpellings: string[];
   region: string;
   subregion: string;
